@@ -1,0 +1,54 @@
+.todo{
+    margin-top: 20%;
+    padding-left: 30%;
+}
+
+.app-name{
+    font-size: xx-large;
+    color: blue;
+}
+
+.add-task{
+    border-radius: 5px;
+    border: 0.25px solid black;
+    width: 300px;
+    line-height: 2em;
+    margin-bottom: 5em;
+}
+
+#add{
+    line-height: 2em;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+}
+
+#taskname{
+    border: none;
+    width: 250px;
+    line-height: 2em;
+    
+}
+
+#edit{
+line-height: 2em;
+border-radius: 5px;
+background-color: lightgreen;
+color: white;
+}
+
+
+#delete{
+    line-height: 2em;
+border-radius: 5px;
+background-color: red;
+color: white;
+
+}
+
+
+
+.tasks{
+    display: block;
+    width: 400px;    
+}

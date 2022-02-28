@@ -12,8 +12,7 @@ const listTasks = (tasks) => {
     <input type="text" id="taskname" value =${task} disabled/>
     <button id=edit}>Edit</button>
     <button id="delete">Delete</button>`
-
-    taskSection.insertAdjacentHTML('afterbegin',taskHtmlElementSection)
+     taskSection.innerHTML = taskHtmlElementSection
     })
 }
 
@@ -33,6 +32,26 @@ addTaskButton.addEventListener('click', (e)=>{
         alert(e)
     }  
 })
+
+taskSection.hasChildNodes() && deleteItems();
+
+
+function deleteItems(){
+    let deletButton = document.querySelector('#delete');
+    let taksName = document.getElementById('taskname').value;
+    
+    deletButton.addEventListener('click', (e)=>{
+        if(taskList.length>0){
+            let index = taskList.indexOf(taksName);
+            taskList.splice(index,1);
+            listTasks(taskList);
+        }
+
+    })
+
+}
+
+
 
 
 

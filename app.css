@@ -14,6 +14,7 @@
     width: 300px;
     line-height: 2em;
     margin-bottom: 5em;
+    box-shadow: 3px 2px 2px 2px grey;
 }
 
 #add{
@@ -21,6 +22,7 @@
     background-color: blue;
     color: white;
     border-radius: 5px;
+    margin-left: 5px;
 }
 
 #taskname{

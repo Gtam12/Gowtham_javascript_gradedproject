@@ -1,4 +1,3 @@
-const todoListSection = document.querySelector('.tasks');
 const addTaskButton = document.querySelector('#add');
 const taksInput = document.querySelector('.add-task');
 const taskSection  = document.querySelector('.tasks');
@@ -7,49 +6,53 @@ const taskList = [];
 
 const listTasks = (tasks) => {
    
+    
     tasks.forEach((task) => {
         const taskHtmlElementSection = `
     <input type="text" id="taskname" value =${task} disabled/>
-    <button id=edit}>Edit</button>
+    <button id="edit"}>Edit</button>
     <button id="delete">Delete</button>`
-     taskSection.innerHTML = taskHtmlElementSection
+    taskSection.innerHTML = taskHtmlElementSection
     })
+
+    
 }
 
 
 
 addTaskButton.addEventListener('click', (e)=>{
     try {   
+        e.preventDefault();
         if (taksInput.value !== '') {
-           // taskSection.innerHTML = '';
+            taskSection.innerHTML = '';
             taskList.push(taksInput.value);
         }
         else
             throw new Error('Enter Task before adding')
-        taskList&&  listTasks(taskList);    
+        taskList.length>0?  listTasks(taskList):'';    
     }
     catch (e) {
         alert(e)
     }  
 })
 
-taskSection.hasChildNodes() && deleteItems();
+// taskSection.innerHTML!= '' && deleteItems();
 
 
-function deleteItems(){
-    let deletButton = document.querySelector('#delete');
-    let taksName = document.getElementById('taskname').value;
-    
-    deletButton.addEventListener('click', (e)=>{
-        if(taskList.length>0){
-            let index = taskList.indexOf(taksName);
-            taskList.splice(index,1);
-            listTasks(taskList);
-        }
+// function deleteItems(){
+//     let deletButton = document.querySelector('#delete');
+//     let taksName = document.getElementById('taskname').value;
 
-    })
+//     deletButton.addEventListener('click', (e)=>{
+//         if(taskList.length>0){
+//             let index = taskList.indexOf(taksName);
+//             taskList.splice(index,1);
+//             listTasks(taskList);
+//         }
 
-}
+//     })
+
+// }
 
 
 

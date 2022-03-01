@@ -1,14 +1,23 @@
-.todo{
-    margin-top: 20%;
-    padding-left: 30%;
+body{
+    margin-left: 50rem;
+    margin-top: 20rem;
 }
 
-.app-name{
+#new-task-submit{
+    line-height: 2em;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+
+h1{
     font-size: xx-large;
     color: blue;
 }
 
-.add-task{
+#new-task-input{
     border-radius: 5px;
     border: 0.25px solid black;
     width: 300px;
@@ -17,40 +26,31 @@
     box-shadow: 3px 2px 2px 2px grey;
 }
 
-#add{
-    line-height: 2em;
-    background-color: blue;
-    color: white;
-    border-radius: 5px;
-    margin-left: 5px;
-}
-
-#taskname{
+.text{
     border: none;
-    width: 250px;
+    width: 220px;
+    line-height: 2em;   
+}
+
+
+.edit{
+
     line-height: 2em;
+    border-radius: 5px;
+    background-color: lightgreen;
+    color: white;
+}
     
-}
-
-#edit{
-line-height: 2em;
-border-radius: 5px;
-background-color: lightgreen;
-color: white;
-}
+.delete{
+        line-height: 2em;
+    border-radius: 5px;
+    background-color: red;
+    color: white;    
+ }
 
 
-#delete{
-    line-height: 2em;
-border-radius: 5px;
-background-color: red;
-color: white;
-
-}
-
-
-
-.tasks{
-    display: block;
-    width: 400px;    
-}
+ #tasks{
+     display: inline-block;
+ }
+    
+    

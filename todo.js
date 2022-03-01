@@ -1,87 +1,62 @@
-const addTaskButton = document.querySelector('#add');
-const taksInput = document.querySelector('.add-task');
-const taskSection  = document.querySelector('.tasks');
+window.addEventListener('load', () => {
+	const form = document.querySelector("#new-task-form");
+	const input = document.querySelector("#new-task-input");
+	const list_el = document.querySelector("#tasks");
 
-const taskList = [];
+	form.addEventListener('submit', (e) => {
+		e.preventDefault();
 
-const listTasks = (tasks) => {
-   
-    
-    tasks.forEach((task) => {
-        const taskHtmlElementSection = `
-    <input type="text" id="taskname" value =${task} disabled/>
-    <button id="edit"}>Edit</button>
-    <button id="delete">Delete</button>`
-    taskSection.innerHTML = taskHtmlElementSection
-    })
+		const task = input.value;
 
-    
-}
+		const task_el = document.createElement('div');
+		task_el.classList.add('task');
 
+		const task_content_el = document.createElement('div');
+		task_content_el.classList.add('content');
 
+		task_el.appendChild(task_content_el);
 
-addTaskButton.addEventListener('click', (e)=>{
-    try {   
-        e.preventDefault();
-        if (taksInput.value !== '') {
-            taskSection.innerHTML = '';
-            taskList.push(taksInput.value);
-        }
-        else
-            throw new Error('Enter Task before adding')
-        taskList.length>0?  listTasks(taskList):'';    
-    }
-    catch (e) {
-        alert(e)
-    }  
-})
+		const task_input_el = document.createElement('input');
+		task_input_el.classList.add('text');
+		task_input_el.type = 'text';
+		task_input_el.value = task;
+		task_input_el.setAttribute('readonly', 'readonly');
 
-// taskSection.innerHTML!= '' && deleteItems();
+		task_content_el.appendChild(task_input_el);
 
+	
+		
+		const task_edit_el = document.createElement('button');
+		task_edit_el.classList.add('edit');
+		task_edit_el.innerText = 'Edit';
 
-// function deleteItems(){
-//     let deletButton = document.querySelector('#delete');
-//     let taksName = document.getElementById('taskname').value;
+		const task_delete_el = document.createElement('button');
+		task_delete_el.classList.add('delete');
+		task_delete_el.innerText = 'Delete';
 
-//     deletButton.addEventListener('click', (e)=>{
-//         if(taskList.length>0){
-//             let index = taskList.indexOf(taksName);
-//             taskList.splice(index,1);
-//             listTasks(taskList);
-//         }
+		task_content_el.appendChild(task_edit_el);
+		task_content_el.appendChild(task_delete_el);
 
-//     })
+		list_el.appendChild(task_el);
 
-// }
+		input.value = '';
 
+		task_edit_el.addEventListener('click', (e) => {
+			if (task_edit_el.innerText.toLowerCase() == "edit") {
+				task_edit_el.innerText = "Save";
+				task_input_el.removeAttribute("readonly");
+				task_input_el.focus();
+			} else {
+				task_edit_el.innerText = "Edit";
+				task_input_el.setAttribute("readonly", "readonly");
+			}
+		});
 
-
-
-
-
-// todoSection.addEventListener('change', (e) => {
-//     console.log(e.target + 'ID')
-    
-//     if (e.target.matches('#edit')) {
-//         e.target.addEventListener('click', () => {
-//             document.querySelector('#taskname').removeAttribute('disabled')
-//         })
-//     }
-
-//     else if (e.target.matches('#save')) {
-//         e.target.addEventListener('click', () => {
-//             takslist.push(document.getElementById('taskname').value)
-//         })
-//     }
-
-    
-
-
-    
-// })
-
-
-
+		task_delete_el.addEventListener('click', (e) => {
+			list_el.removeChild(task_el);
+		});
+	});
+});
 
 
 

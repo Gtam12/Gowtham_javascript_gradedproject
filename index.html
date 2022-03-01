@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="app.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task List 2021</title>
+
+	<link rel="stylesheet" href="app.css" />
 </head>
 <body>
+	
+	<header>
+		<h1>To-Do List App</h1>
+		<form id="new-task-form">
+			<input 
+				type="text" 
+				name="new-task-input" 
+				id="new-task-input" 
+				placeholder="Add Todo" />
+			<input 
+				type="submit"
+				id="new-task-submit" 
+				value="Add" />
+		</form>
+	</header>
+	<main>
+		<section class="task-list">
 
-<form class="todo" >
-    <h1 class="app-name"> To-Do List App</h1>
-    <div>
-        <input type="text" class="add-task" placeholder="Add Todo"/>
-        <button id="add">Add</button>
-    </div>
 
+			<div id="tasks">
 
-    <div class="tasks"> 
-        
-    </div>
-</form>
+				<!-- <div class="task">
+					<div class="content">
+						<input 
+							type="text" 
+							class="text" 
+							value="A new task"
+							readonly>
+					</div>
+					<div class="actions">
+						<button class="edit">Edit</button>
+						<button class="delete">Delete</button>
+					</div>
+				</div> -->
 
-    <script src="todo.js"></script>
+			</div>
+		</section>
+	</main>
+
+	<script src="todo.js"></script>
 </body>
 </html>
